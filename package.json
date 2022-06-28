@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "node-sass": "^7.0.1"
+  },
+  "scripts": {
+    "sass": "node-sass sass/main.sass -o css/ --recursive --watch",
+    "watch-sass": "node-sass --watch --recursive sass/main.sass -o css/ "
+  }
+}
