@@ -4,7 +4,7 @@
     "node-sass": "^7.0.1"
   },
   "scripts": {
-    "sass": "node-sass sass/main.sass -o css/ --recursive --watch",
+    "sass": "node-sass sass/ -o css/ --recursive --watch",
     "server": "npx http-server -p 8080"
   }
 }
