@@ -5,6 +5,6 @@
   },
   "scripts": {
     "sass": "node-sass sass/main.sass -o css/ --recursive --watch",
-    "watch-sass": "node-sass --watch --recursive sass/main.sass -o css/ "
+    "server": "npx http-server -p 8080"
   }
 }
