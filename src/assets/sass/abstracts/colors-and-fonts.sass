@@ -1,0 +1,57 @@
+/// Font sizes
+$font-sz-root: 20px
+$font-sz-primary: 40px
+$font-sz-secondary: 48px
+$font-sz-nav: 24px
+$font-sz-small: 16px
+
+/// Font families
+$font-fm-root: 'Istok Web', sans-serif
+$font-fm-primary: 'Imbue', serif
+$font-fm-secondary: 'Londrina Solid', cursive
+
+/// Color Palette
+$color-primary: rgb(243, 190, 104)
+$color-secondary: rgb(195, 116, 116)
+$color-accent: rgb(215, 134, 39)
+$color-tan: rgb(240, 218, 205)
+$color-brown: rgb(175, 151, 138)
+$color-text: rgb(125, 125, 125)
+$color-white: rgb(255, 255, 255)
+$color-black: rgb(61, 56, 56)
+
+// Mix-ins
+@mixin background-opacity($color, $opacity: 0.3)
+    background: $color
+    background: rgba($color, $opacity)
+
+@mixin font($size, $family, $weight)
+    font-size: $size
+    font-family: $family
+    font-weight: $weight
+
+/// Global font configs
+=font-body()
+    @include font($font-sz-root, $font-fm-root, 400)
+    color: $color-text
+
+=font-primary()
+    @include font($font-sz-primary, $font-fm-primary, 600)
+    letter-spacing: 0.08em
+    text-transform: uppercase
+    color: $color-primary
+
+=font-secondary()
+    @include font($font-sz-secondary, $font-fm-secondary, 400)
+    letter-spacing: 0.08em
+    color: $color-secondary
+
+=font-nav()
+    @include font($font-sz-nav, $font-fm-secondary, 300)
+    letter-spacing: 0.08em
+    text-transform: uppercase
+    color: $color-secondary
+
+=font-small()
+    @include font($font-sz-small, $font-fm-root, 400)
+    color: $color-black
