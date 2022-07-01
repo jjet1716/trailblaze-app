@@ -110,6 +110,8 @@ export default {
         thumbnail: ""
       }
       ]
+
+      self.document.location.hash = 'results-found'
     }
   }
 }

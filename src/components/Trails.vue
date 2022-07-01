@@ -9,7 +9,6 @@
             <Trail :trail="trail"></Trail>
         </div>  
     </div>
-    
 </template>
 
 <script>
