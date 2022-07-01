@@ -1,29 +1,38 @@
 header
-    width: 100%
+    width: 100vw
     height: 150px
-    display: flex
-    align-items: center
-    justify-content: space-between
+    padding-top: 3em
+    background: linear-gradient(180deg, rgba(196, 116, 116, 0.94) 0%, rgba(215, 134, 39, 0.22) 8.85%, rgba(215, 134, 39, 0.14) 18.23%, rgba(215, 134, 39, 0) 100%)
+    
+    .content-wrapper
+        max-width: 1600px
+        height: inherit
+        padding: 0 2em
+        margin: auto
 
-    .header-col:first-of-type
         display: flex
-        height: 100%
+        align-items: center
+        justify-content: space-between
 
-        .logo-container
-            width: 100%
+        .header-col.logo
+            display: flex
+            align-items: center
             height: 100%
 
-            img
+            .logo-container
+                width: 100%
                 height: 100%
-                
 
-header #cloud-background
-    width: 100%
-    position: fixed 
-    left: 0px
-    top: 0px 
-    z-index: -1
+                img
+                    height: 100%
 
-header #cloud-background img 
-    width: 100%
-    height: 100%
+        .header-col.nav ul
+            list-style: none
+            text-align: right
+
+            a
+                @include font-nav
+
+
+
+    

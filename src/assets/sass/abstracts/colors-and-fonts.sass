@@ -1,9 +1,9 @@
 /// Font sizes
-$font-sz-root: 20px
-$font-sz-primary: 40px
-$font-sz-secondary: 48px
-$font-sz-nav: 24px
-$font-sz-small: 16px
+$font-sz-root: 22px
+$font-sz-primary: 45px
+$font-sz-secondary: 55px
+$font-sz-nav: 26px
+$font-sz-small: 18px
 
 /// Font families
 $font-fm-root: 'Istok Web', sans-serif
@@ -24,6 +24,9 @@ $color-black: rgb(61, 56, 56)
 @mixin background-opacity($color, $opacity: 0.3)
     background: $color
     background: rgba($color, $opacity)
+
+@mixin border-opacity($color, $opacity: 0.3)
+    border: 2px solid rgba($color, $opacity)
 
 @mixin font($size, $family, $weight)
     font-size: $size

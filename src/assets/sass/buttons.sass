@@ -1,0 +1,25 @@
+.btn
+    @include font($font-sz-root, $font-fm-root, 600)
+    color: $color-white
+    text-align: center
+
+    padding: .75em 1em
+    width: fit-content
+    border: none
+    border-radius: 4px
+
+    cursor: pointer
+    transition: all 0.25s ease
+
+
+    &.btn-primary
+        background: $color-primary
+        box-shadow: 0px 4px 0px $color-accent
+
+        &:hover
+            background: $color-accent
+            transform: translateY(4px)
+            box-shadow: 0px 0px 0px transparent
+
+    &.full
+        width: 100%

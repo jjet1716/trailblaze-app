@@ -1,21 +1,88 @@
+/// root settings
 html
     background-image: url("assets/images/topographic-background.svg")
     @include font-body
+    line-height: 1.35
     -webkit-font-smoothing: antialiased
     -moz-osx-font-smoothing: grayscale
+
+    ::selection
+        background: $color-brown
+        color: white
 
 /// text
 /* trailblaze header */
 h1
     @include font-primary
+    margin-left: 0.75em
 /* page header */
 h2
     @include font-secondary
+    margin-bottom: 0.05em
 /* navigation and trail headers */
 h3
     @include font-nav
 p
     @include font-body
+a
+    @include font-body
+    color: $color-secondary
+    text-decoration: none
+
+/// spacing settings
+$header-footer-spacing: 8em // distance from header and footer
+$content-spacing-lg: 8em
+$content-spacing-md: 5em // used to seperate content
+$content-spacing-sm: 3em
+
+.space-bottom-sm
+    margin-bottom: $content-spacing-sm
+
+.space-bottom-md
+    margin-bottom: $content-spacing-md
+
+.space-bottom-lg
+    margin-bottom: $content-spacing-lg
+
+
+/// layouts
+.tb-page // every page wrapped in this
+    margin-top: $header-footer-spacing 
+    margin-bottom: $header-footer-spacing
+
+    .content-wrapper // every pages content wrapped in this
+        max-width: 1400px
+        padding: 0 5em
+        margin: auto
+
+.col-layout // col layouts
+    display: flex
+    flex-wrap: nowrap
+
+    > // default col settings
+        *:not(:last-child) 
+            margin-right: 0.75em
+
+        *:not(:first-child) 
+            margin-left: 0.75em
+        
+    // generate 6 col classes
+    @for $i from 1 through 6
+        $col_width: 100% / $i
+
+        .col--#{$i}
+            flex-grow: 0
+            flex-shrink: 1
+            flex-basis: $col_width
+
+.flex-col // class for setting flex column layout
+    display: flex
+    flex-direction: column
+
+// generate 6 flex grow classes
+@for $i from 1 through 6
+    .grow--#{$i}
+        flex-grow: 1
 
 
 

@@ -1,0 +1,30 @@
+#find-trails
+    display: flex
+    flex-direction: column
+    width: 100%
+
+    label
+        width: 0 // override width setting for input (they dont shrink otherwise)
+
+        >:first-child // label separation
+            margin-top: 0.15em
+
+        input, select
+            // make select and input same height
+            height: 2.35em
+            vertical-align: top
+            box-sizing: border-box
+            -moz-box-sizing: border-box
+            -webkit-box-sizing: border-box
+
+            // general styling
+            padding: 0.3em 0.6em
+            @include border-opacity($color-tan, 0.35)
+            box-shadow: 0px 2px 0px $color-tan
+            border-radius: 4px
+
+    .col-layout
+        align-items: end // align button
+
+        #cur-location-btn
+            height: 2.35em // set height of button to input field

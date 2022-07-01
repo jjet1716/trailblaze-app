@@ -1,6 +1,10 @@
 <template>
-  <Header />
-  <router-view></router-view>
+  <Header></Header>
+  <main class="tb-page">
+    <div class="content-wrapper">
+      <router-view></router-view>
+    </div>
+  </main>
 </template>
 
 <script>
