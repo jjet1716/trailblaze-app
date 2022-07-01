@@ -1,6 +1,7 @@
 /// root settings
 html
     background-image: url("assets/images/topographic-background.svg")
+    background-attachment: fixed
     @include font-body
     line-height: 1.35
     -webkit-font-smoothing: antialiased
@@ -79,10 +80,13 @@ $content-spacing-sm: 3em
     display: flex
     flex-direction: column
 
-// generate 6 flex grow classes
-@for $i from 1 through 6
+// generate 7 flex grow and shrink classes
+@for $i from 0 through 6
     .grow--#{$i}
-        flex-grow: 1
+        flex-grow: $i
+    
+    .shrink--#{$i}
+        flex-shrink: $i
 
 
 

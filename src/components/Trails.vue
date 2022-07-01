@@ -1,11 +1,7 @@
 <template>
     <div class="col-layout space-bottom-sm">
-        <p id="results-found">{{ found }} results found</p>
-        <div class="divider-container grow--1">
-            <svg width="100%" height="17" viewBox="0 0 1115 17" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                <path d="M1.75486 8.20546C19.9889 -17.2316 -5.3694 36.3376 17.419 6.56303L1114.5 6.56302" stroke="#D78627" stroke-width="3"/>
-            </svg>
-        </div>
+        <p id="results-found" class="shrink--0">{{ found }} results found</p>
+        <Divider :width="100" :height="17" stroke="2" :col="'#D78627'"></Divider>
     </div>
 
     <div class="trail-grid-container">
@@ -18,6 +14,7 @@
 
 <script>
 import Trail from './Trail'
+import Divider from '../components/Divider'
 
 export default {
     name: "Trails",
@@ -32,7 +29,8 @@ export default {
         }
     },
     components: {
-        Trail
+        Trail,
+        Divider
     }
 }
 </script>

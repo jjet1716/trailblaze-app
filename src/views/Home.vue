@@ -1,11 +1,7 @@
 <template>
   <div class="page-header-container">
     <h2>Find Trails Near You in Seconds</h2>
-    <div class="divider-container">
-      <svg width="100%" height="17" viewBox="0 0 1115 17" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <path d="M1.75486 8.20546C19.9889 -17.2316 -5.3694 36.3376 17.419 6.56303L1114.5 6.56302" stroke="#D78627" stroke-width="3"/>
-      </svg>
-    </div>
+    <Divider :width="100" :height="25" stroke="3" :col="'#D78627'"></Divider>
     
   </div>
   <div class="form-info-container space-bottom-md">
@@ -18,12 +14,14 @@
 <script>
 import SearchTrails from '../components/SearchTrails'
 import Trails from '../components/Trails'
+import Divider from '../components/Divider'
 
 export default {
   name: 'Home',
   components: {
     SearchTrails,
-    Trails
+    Trails,
+    Divider
   },
   data() {
     return {
