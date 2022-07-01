@@ -11,8 +11,8 @@
                 <nav>
                     <ul id="main-nav">
                         <li><router-link to="/about">About</router-link></li>
-                        <li><router-link to="#">Sign In</router-link></li>
-                        <li><router-link to="/contact">Contact</router-link></li>
+                        <li><a @click="comingSoon()" href="">Sign In</a></li>
+                        <li><a @click="comingSoon()" href="">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -23,6 +23,11 @@
 <script>
 export default {
   name: 'Header',
+  methods: {
+    comingSoon() {
+        alert("More pages coming soon")
+    }
+  }
 }
 </script>
 

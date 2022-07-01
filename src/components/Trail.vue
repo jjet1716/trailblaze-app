@@ -1,5 +1,21 @@
 <template>
-    <p>{{ trail.name }}</p>
+    <div class="card-layout flex-col">
+        <a v-bind:href='trail.url' target="_blank" rel="noopener">
+            <div v-bind:style="{ 'background-image': 'url(' + trail.thumbnail + ')' }" v-bind:class="[this.trail.thumbnail ? 'image' : 'no-image', 'trail-image-container']">
+                <p class="difficulty-tax">{{ trail.difficulty }}</p>
+            </div>
+        </a>
+
+        <div class="trail-data-container">
+            <a v-bind:href='trail.url' class="trail-name" target="_blank" rel="noopener">{{ trail.name }}</a>
+            <p>{{ trail.city }}, {{ trail.region }}, {{ trail.country }}</p>
+            <p>{{ trail.length }}</p>
+            <p>{{ trimDescription() }}</p>
+        </div>
+
+        <button class="btn btn-primary" @click="redirectToTrail()">Read More</button>
+    </div>
+    
 </template>
 
 <script>
@@ -7,6 +23,25 @@ export default {
     name: "Trail",
     props: {
         trail: Object
+    },
+    data() {
+        styleObj: {
+            background: 'red'
+        }
+    },
+    methods: {
+        redirectToTrail() {
+            window.location.href = this.trail.url
+        },
+        trimDescription() {
+            return (this.trail.description).substring(0, 100) + '...'
+        }
     }
 }
 </script>
+
+<styles lang="sass">
+    @import ../assets/sass/abstracts/colors-and-fonts
+    @import ../assets/sass/trail
+    @import ../assets/sass/buttons
+</styles>

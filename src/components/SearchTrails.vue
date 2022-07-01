@@ -15,7 +15,7 @@
             <label for="location" class="flex-col grow--1">Location Address
                 <input type="text" id="location" v-model="location" name="location" required/>
             </label>
-            <button type="button" id="cur-location-btn" class="btn btn-primary">
+            <button @click="getCurrentLocation()" type="button" id="cur-location-btn" class="btn btn-primary">
                 <i class="fas fa-location-dot"></i>
             </button>
         </div>
@@ -36,7 +36,10 @@
         methods: {
             findTrails(e) {
                 e.preventDefault()
-                console.log(this.trail_type, this.radius, this.location);
+                this.$emit('find-trails', this)
+            },
+            getCurrentLocation() {
+                alert("Location services coming soon!")
             }
         }
 

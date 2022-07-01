@@ -1,5 +1,5 @@
 <template>
-    <div class="col-layout">
+    <div class="col-layout space-bottom-sm">
         <p id="results-found">{{ found }} results found</p>
         <div class="divider-container grow--1">
             <svg width="100%" height="17" viewBox="0 0 1115 17" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -8,9 +8,12 @@
         </div>
     </div>
 
-    <div v-for="trail in trails">
-        <Trail :trail="trail"></Trail>
+    <div class="trail-grid-container">
+        <div v-for="trail in trails" class="trail-item">
+            <Trail :trail="trail"></Trail>
+        </div>  
     </div>
+    
 </template>
 
 <script>
