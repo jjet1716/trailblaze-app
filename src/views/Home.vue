@@ -57,7 +57,7 @@ export default {
       {
         name: 'Tree Farm',
         url: "https://www.singletracks.com/bike-trails/novi-tree-farm-lakeshore-park/",
-        length: "11.0 miles",
+        length: "11.0",
         description: "Starts on right hand side and is all pure sweet single track. It is technical and has many manmade stunts(rockgardens, log jumps) with bypass at each. The main feature is \"THE CRATER\". Which is a popular spot to stop and do some jumping and hucking. Opportunity to get sweet air.",
         difficulty: 'challenging',
         city: "Novi",
@@ -68,7 +68,7 @@ export default {
       {
         name: 'Hickory Glen',
         url: "https://www.singletracks.com/bike-trails/hickory-glen/",
-        length: "6.0 miles",
+        length: "6.0",
         description: "The trail loop is 5.7 miles. Look for yellow arrows (some at eye level and some higher) pointing you in the correct direction of the trail loop. Carsonite-type ground markers have also been installed and blacktop path intersections to clarify the MTB trail direction. The trail makes its way around most of Hickory Glen Park and at about the 4 mile mark you'll find yourself back on the blacktop bike path heading towards the EAST end of the park. You'll cross over a very nice floating bridge and board walk, and just after you are over the board walk the trail picks back up on the left. After you finish this section of trail, you can pick up the MTB trail again on the EAST side of the blacktop path. After a quarter mile you'll be dumped back on the blacktop path. Take it back over the floating bridge and pick up the MTB trail on your left again and follow back to the trailhead.",
         difficulty: 'easy',
         city: "Commerce Township",
@@ -79,7 +79,7 @@ export default {
       {
         name: 'Hickory Glen',
         url: "https://www.singletracks.com/bike-trails/hickory-glen/",
-        length: "6.0 miles",
+        length: "6.0",
         description: "The trail loop is 5.7 miles. Look for yellow arrows (some at eye level and some higher) pointing you in the correct direction of the trail loop. Carsonite-type ground markers have also been installed and blacktop path intersections to clarify the MTB trail direction. The trail makes its way around most of Hickory Glen Park and at about the 4 mile mark you'll find yourself back on the blacktop bike path heading towards the EAST end of the park. You'll cross over a very nice floating bridge and board walk, and just after you are over the board walk the trail picks back up on the left. After you finish this section of trail, you can pick up the MTB trail again on the EAST side of the blacktop path. After a quarter mile you'll be dumped back on the blacktop path. Take it back over the floating bridge and pick up the MTB trail on your left again and follow back to the trailhead.",
         difficulty: 'easy',
         city: "Commerce Township",
@@ -101,7 +101,7 @@ export default {
       {
         name: 'Tree Farm',
         url: "https://www.singletracks.com/bike-trails/novi-tree-farm-lakeshore-park/",
-        length: "11.0 miles",
+        length: "11.0",
         description: "Starts on right hand side and is all pure sweet single track. It is technical and has many manmade stunts(rockgardens, log jumps) with bypass at each. The main feature is \"THE CRATER\". Which is a popular spot to stop and do some jumping and hucking. Opportunity to get sweet air.",
         difficulty: 'challenging',
         city: "Novi",

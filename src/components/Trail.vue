@@ -8,8 +8,10 @@
 
         <div class="trail-data-container">
             <a v-bind:href='trail.url' class="trail-name" target="_blank" rel="noopener">{{ trail.name }}</a>
-            <p>{{ trail.city }}, {{ trail.region }}, {{ trail.country }}</p>
-            <p>{{ trail.length }}</p>
+            <div class="meta-data space-bottom-xsm">
+                <p>{{ trail.city }}, {{ trail.region }}, {{ trail.country }}</p>
+                <p>{{ trail.length }} Miles</p>
+            </div>
             <p>{{ trimDescription() }}</p>
         </div>
 

@@ -31,10 +31,14 @@ a
     text-decoration: none
 
 /// spacing settings
-$header-footer-spacing: 8em // distance from header and footer
+$header-footer-spacing: 6em // distance from header and footer
 $content-spacing-lg: 8em
 $content-spacing-md: 5em // used to seperate content
 $content-spacing-sm: 3em
+$content-spacing-xsm: 1.5em
+
+.space-bottom-xsm
+    margin-bottom: $content-spacing-xsm
 
 .space-bottom-sm
     margin-bottom: $content-spacing-sm
@@ -47,6 +51,11 @@ $content-spacing-sm: 3em
 
 
 /// layouts
+#app // wrapper for header, main, and footer
+    display: flex
+    flex-direction: column
+    min-height: 100vh
+
 .tb-page // every page wrapped in this
     margin-top: $header-footer-spacing 
     margin-bottom: $header-footer-spacing
