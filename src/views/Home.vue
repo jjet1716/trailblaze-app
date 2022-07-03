@@ -5,7 +5,7 @@
     
   </div>
   <div class="form-info-container space-bottom-md">
-    <p class="space-bottom-sm">Browse through thousands of outdoor recreation areas to find trails for mountain biking and hiking near you or any location you specify</p>
+    <p class="space-bottom-sm">Browse through thousands of outdoor recreation areas to find trails for mountain biking and hiking near you or any location you specify!</p>
     <SearchTrails :submitting='loading' @find-trails="findTrails"></SearchTrails>
   </div>
   <Trails :trails="trails" :found="found"></Trails>

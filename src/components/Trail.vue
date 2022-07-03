@@ -39,7 +39,8 @@ export default {
                 'Advanced' : 'red',
                 'Intermediate' : 'yellow',
                 'Beginner' : 'green',
-                'Easy' : 'green'
+                'Easy' : 'green',
+                'Easiest' : 'green'
             }
 
             if (diff in diffToColor) {

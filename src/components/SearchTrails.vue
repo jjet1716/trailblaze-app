@@ -1,4 +1,5 @@
 <template>
+
     <form @submit="findTrails" id="find-trails">
         <div class="col-layout space-bottom-sm">
             <label for="trail-type" class="col--2 flex-col">Trail Type
@@ -42,7 +43,7 @@ export default {
             address: '',
             lat: '',
             long: '',
-            spinning: false
+            spinning: false,
         }
     },
     mounted() {
@@ -53,19 +54,43 @@ export default {
 
         autocomplete.addListener("place_changed", () => {
             let place = autocomplete.getPlace()
-            this.lat = this.place.geometry.location.lat()
-            this.long = this.place.geometry.location.lng()
+            this.lat = place.geometry.location.lat()
+            this.long = place.geometry.location.lng()
+            this.address = place.formatted_address
         })
+
+        // listen for manual addr entry
+        document.getElementById('autocomplete').addEventListener("input", (e) => {
+            this.lat = '' // needs to be recomputed
+            this.long = '' // needs to be recomputed
+            this.address = e.target.value
+        })
+
+
     },
     methods: {
         findTrails(e) {
             e.preventDefault()
 
-            this.$emit('find-trails', this)
+            if (this.lat === '' || this.long === '') { // custom addr entered (not provided by google)
+                this.addressToCoords(this.address)
+                    .then(res => {
+                        // set coords from custom address if not false
+                        if (res === false) {
+                            // show error to user here
+                            console.log('Address could not be found')
+                            return false
+                        }
+                        this.lat = res.lat
+                        this.long = res.long
+                        this.$emit('find-trails', this)
+                    })
+            } else {
+                this.$emit('find-trails', this)
+            }
         },
         setCurrentLocation() {
             this.spinning = true
-
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(
                     position => { // user accepts location prompt
@@ -77,6 +102,7 @@ export default {
                                 this.address = res === false ? (this.lat + ', ' + this.long) : res
                             })
                         this.spinning = false
+                        //this.customAddr = false
                     },
                     error => { // user does not accept location prompt
                         console.log(error.message)
@@ -106,6 +132,31 @@ export default {
                 } else {
                     console.log(res.data.results[0].formatted_address)
                     return res.data.results[0].formatted_address
+                }
+
+            } catch(err) {
+                console.log(err.message)
+                return false
+            }
+        },
+        async addressToCoords(address) {
+            // convert address to coords from gmaps geocode api, if error return false 
+            try {
+                const res = await axios({
+                    method: 'get',
+                    url: 'https://maps.googleapis.com/maps/api/geocode/json',
+                    params: {
+                        address: address,
+                        key: GOOGLE_MAPS_API_KEY
+                    }
+                })
+
+                if (res.data.status !== "OK") {
+                    console.log(res.data.status)
+                    return false
+                } else {
+                    console.log(res.data.results[0])
+                    return { lat: res.data.results[0].geometry.location.lat, long: res.data.results[0].geometry.location.lng }
                 }
 
             } catch(err) {
