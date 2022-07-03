@@ -28,3 +28,24 @@
 
         #cur-location-btn
             height: 2.35em // set height of button to input field
+            aspect-ratio: 1 / 1 // make it square
+            position: relative
+            display: flex
+            justify-content: center
+
+// google maps dropdown styling
+.pac-container
+    box-shadow: 0 2px 6px rgb(0 0 0 / 4%)
+    @include border-opacity($color-tan, 0.35)
+    border-radius: 4px
+
+    .pac-item
+        padding: 0.6em 0.6em
+        @include font-body
+        border-top: 1px solid #f9f9f9
+
+        .pac-icon
+            display: none
+
+        .pac-item-query
+            @include font-body

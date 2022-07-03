@@ -97,6 +97,30 @@ $content-spacing-xsm: 1.5em
     .shrink--#{$i}
         flex-shrink: $i
 
+/// spinners
+
+@keyframes spinner 
+    0% 
+        transform: translate3d(-50%, -50%, 0) rotate(0deg)
+    
+    100% 
+        transform: translate3d(-50%, -50%, 0) rotate(360deg)
+    
+
+.spinner::before 
+    animation: 1.5s linear infinite spinner
+    animation-play-state: inherit
+    border: solid 5px transparent
+    border-bottom-color: $color-white
+    border-top-color: $color-white
+    border-radius: 50%
+    content: ""
+    padding: 10px
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate3d(-50%, -50%, 0)
+    will-change: transform
 
 
 

@@ -26,11 +26,6 @@ export default {
     props: {
         trail: Object
     },
-    data() {
-        styleObj: {
-            background: 'red'
-        }
-    },
     methods: {
         redirectToTrail() {
             window.location.href = this.trail.url

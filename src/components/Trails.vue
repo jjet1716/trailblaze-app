@@ -1,7 +1,7 @@
 <template>
     <div class="col-layout space-bottom-sm">
         <p id="results-found" class="shrink--0">{{ found }} results found</p>
-        <Divider :width="100" :height="17" stroke="2" :col="'#D78627'"></Divider>
+        <Divider :width=100 :height=17 :stroke=2 :col="'#D78627'"></Divider>
     </div>
 
     <div class="trail-grid-container">
