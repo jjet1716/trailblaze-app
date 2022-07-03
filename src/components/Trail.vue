@@ -2,7 +2,7 @@
     <div class="card-layout flex-col">
         <a v-bind:href='trail.url' target="_blank" rel="noopener">
             <div v-bind:style="{ 'background-image': 'url(' + trail.thumbnail + ')' }" v-bind:class="[this.trail.thumbnail ? 'image' : 'no-image', 'trail-image-container']">
-                <p class="difficulty-tax">{{ trail.difficulty }}</p>
+                <p v-if="trail.difficulty" class="difficulty-tax" :class="[difficultyToColor(trail.difficulty)]">{{ trail.difficulty }}</p>
             </div>
         </a>
 
@@ -28,10 +28,25 @@ export default {
     },
     methods: {
         redirectToTrail() {
-            window.location.href = this.trail.url
+            window.open(this.trail.url, '_blank')
         },
         trimDescription() {
-            return (this.trail.description).substring(0, 100) + '...'
+            return (this.trail.description).substring(0, 100).replaceAll(/(<br>)|(<br \/>)|(<br\/>)/g, '') + '...'
+        },
+        difficultyToColor(diff) {
+            const diffToColor = {
+                'Challenging' : 'red',
+                'Advanced' : 'red',
+                'Intermediate' : 'yellow',
+                'Beginner' : 'green',
+                'Easy' : 'green'
+            }
+
+            if (diff in diffToColor) {
+                return diffToColor[diff]
+            } 
+
+            return ''
         }
     }
 }
