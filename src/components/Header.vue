@@ -32,6 +32,6 @@ export default {
 </script>
 
 <style lang="sass">
-    @import ../assets/sass/abstracts/colors-and-fonts
+    @import ../assets/sass/base
     @import ../assets/sass/header
 </style>

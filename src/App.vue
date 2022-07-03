@@ -31,13 +31,20 @@ export default {
 /* Istok Web (body) */
 @import url('https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400&display=swap')
 
-/// vendors (normalize)
-@import assets/sass/vendors/normalize
-
-/// abstracts (fonts, colors)
-@import assets/sass/abstracts/colors-and-fonts
-
 /// config/helper files
 @import assets/sass/base
+
+/// root settings
+html
+    background-image: url("assets/images/topographic-background.svg")
+    background-attachment: fixed
+    @include font-body
+    line-height: 1.35
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+
+    ::selection
+        background: $color-brown
+        color: white
 
 </style>

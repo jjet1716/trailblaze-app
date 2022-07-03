@@ -36,29 +36,41 @@ export default {
   methods: {
     async findTrails(e) {
       this.loading = true
-      // console.log(e.trail_type)
-      // console.log(e.address)
+
+      let url = 'https://trailapi-trailapi.p.rapidapi.com/'
+      let params = {
+        lat: e.lat, 
+        lon: e.long,
+        radius: e.radius
+      }
+      
+      if (e.trail_type === "hiking") {
+        params['q-activities_activity_type_name_eq'] = 'hiking'
+        url = url + 'activity/'
+      } else if (e.trail_type === "biking") {
+        url = url + 'trails/explore/'
+      }
 
       // make trails API call (need to hide key from frontend eventually)
       try {
         const res = await axios({
           method: 'get',
-          url: 'https://trailapi-trailapi.p.rapidapi.com/trails/explore/',
-          params: {
-            lat: e.lat, 
-            lon: e.long,
-            radius: e.radius
-          },
+          url: url,
+          params: params,
           headers: {
             'X-RapidAPI-Key': TRAILS_API_KEY,
             'X-RapidAPI-Host': 'trailapi-trailapi.p.rapidapi.com'
           }
         })
+        
+        if (e.trail_type === "biking") {
+          this.trails = res.data.data
+        } else {
+          this.trails = res.data
+        }
 
-        this.trails = res.data.data
         this.found = this.trails.length
-
-        console.log(this.trails, this.found)
+        console.log(res.data, this.found)
 
       } catch(err) {
         console.log(err)
@@ -70,5 +82,6 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+  @import ../assets/sass/base
   @import ../assets/sass/pages-shared
 </style>

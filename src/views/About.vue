@@ -25,13 +25,14 @@
 import Divider from '../components/Divider'
 
 export default {
-  name: 'About',
-  components: {
-    Divider
-  }
+    name: 'About',
+    components: {
+        Divider
+    }
 }
 </script>
 
 <style lang="sass" scoped>
-  @import ../assets/sass/pages-shared
+    @import ../assets/sass/base
+    @import ../assets/sass/pages-shared
 </style>

@@ -7,6 +7,12 @@
     grid-row-gap: 5em
     grid-column-gap: 1.5em
 
+    @media screen and (max-width: $tablet-width) 
+        grid-template-columns: 1fr 1fr
+
+    @media screen and (max-width: $mobile-width) 
+        grid-template-columns: 1fr
+
     .trail-item 
         @include background-opacity($color-white, 0.55)
         @include border-opacity($color-tan, 0.35)

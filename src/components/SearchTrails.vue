@@ -1,11 +1,11 @@
 <template>
-
+    <!-- put error message here -->
     <form @submit="findTrails" id="find-trails">
-        <div class="col-layout space-bottom-sm">
+        <div class="col-layout space-bottom-sm full-mobile">
             <label for="trail-type" class="col--2 flex-col">Trail Type
                 <select id="trail-type" v-model="trail_type" name="trail_type" required>
-                    <option value="hiking">Hiking</option>
                     <option value="biking">Mountain Biking</option>
+                    <option value="hiking">Hiking</option>
                 </select>
             </label>
             <label for="radius" class="col--2 flex-col">Radius (miles)
@@ -38,12 +38,12 @@ export default {
     },  
     data() {
         return {
-            trail_type: 'hiking',
-            radius: '25',
+            trail_type: 'biking', // default setting for trail type
+            radius: '25', // default radius
             address: '',
             lat: '',
             long: '',
-            spinning: false,
+            spinning: false, // true when pin button is pressed (activates css spinner)
         }
     },
     mounted() {
@@ -59,14 +59,12 @@ export default {
             this.address = place.formatted_address
         })
 
-        // listen for manual addr entry
+        // listen for custom address entry
         document.getElementById('autocomplete').addEventListener("input", (e) => {
             this.lat = '' // needs to be recomputed
             this.long = '' // needs to be recomputed
             this.address = e.target.value
         })
-
-
     },
     methods: {
         findTrails(e) {
@@ -169,7 +167,7 @@ export default {
 </script>
 
 <style lang="sass">
-    @import ../assets/sass/abstracts/colors-and-fonts
+    @import ../assets/sass/base
     @import ../assets/sass/search-trails
     @import ../assets/sass/buttons
 </style>

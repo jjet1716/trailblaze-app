@@ -35,7 +35,7 @@ export default {
 </script>
 
 <styles lang="sass">
-    @import ../assets/sass/abstracts/colors-and-fonts
+    @import ../assets/sass/base
     @import ../assets/sass/trails
     @import ../assets/sass/buttons
 </styles>
